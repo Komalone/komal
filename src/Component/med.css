@@ -1,0 +1,27 @@
+.medform{
+    padding: 5%;
+    text-align: center;
+    margin: 5%;
+    background: beige;
+    display: flex;
+}
+.medform label{
+    font-size: x-large;
+    font-family: serif;
+    font-weight: 600;
+}
+.medform input{
+    padding: 3%;
+}
+.medlist{
+    display: table-caption;
+    text-align: left;
+    margin: 2rem;
+    border-spacing: 20px;
+}
+.bttn{
+    background-color: darkcyan;
+    padding: 2%;
+    font-size: large;
+    margin: 4px;
+}

@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment, useState } from 'react';
+import {} from 'react-router-dom';
+import MedForm from './Component/MedForm';
+import AvailableMedList from './Component/AvailableMedList';
+import Header from './Component/Header';
+import Cart from './Component/Cart/Cart';
 
 function App() {
+  const [showCart, setShowCart]=useState(false);
+  
+  const openCart=()=>{
+    setShowCart(true);
+  }
+  const closeCart=()=>{
+    setShowCart(false);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      {showCart && <Cart onClose={closeCart}/>}
+      <Header onShowCart={openCart}/>
+      <main>
+      <MedForm />
+      <AvailableMedList/>
+      </main>
+    </Fragment>
   );
 }
 
